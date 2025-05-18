@@ -34,8 +34,10 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="/cv"
+                href="/resume/CV-TungNgo-e.pdf"
                 className="border-primary text-primary hover:bg-primary/10 rounded-full border px-6 py-2 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Download CV
               </a>

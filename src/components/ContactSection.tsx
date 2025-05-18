@@ -51,7 +51,7 @@ export const ContactSection = () => {
                   <MailIcon className="text-primary h-6 w-6" />
                 </div>
 
-                <div>
+                <div className="w-[200px] text-center">
                   <h4 className="text-center font-medium">Email</h4>
                   <a
                     href="mailto:tungthanh254@gmail.com"
@@ -67,7 +67,7 @@ export const ContactSection = () => {
                   <PhoneIcon className="text-primary h-6 w-6" />
                 </div>
 
-                <div>
+                <div className="w-[200px] text-center">
                   <h4 className="text-center font-medium">Phone</h4>
                   <a
                     href="tel:+84325333684"
@@ -83,7 +83,7 @@ export const ContactSection = () => {
                   <MapPinIcon className="text-primary h-6 w-6" />
                 </div>
 
-                <div>
+                <div className="w-[200px] text-center">
                   <h4 className="text-center font-medium">Location</h4>
                   <a
                     href="mailto:tungthanh254@gmail.com"
