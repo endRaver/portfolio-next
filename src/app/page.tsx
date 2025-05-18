@@ -1,9 +1,15 @@
+import StarBackground from "@/components/StarBackground";
 import ThemeToggle from "@/components/ThemeToggle";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="bg-background text-foreground min-h-screen overflow-x-hidden">
       <ThemeToggle />
+
+      <StarBackground />
+
+      <Navbar />
     </div>
   );
 }
