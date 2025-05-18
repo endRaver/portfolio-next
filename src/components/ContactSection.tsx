@@ -133,11 +133,11 @@ export const ContactSection = () => {
           <div className="bg-card rounded-lg p-8 shadow-xs">
             <h3 className="mb-6 text-2xl font-semibold">Send a Message</h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="group">
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-center text-sm font-medium"
+                  className="text-muted-foreground group-focus-within:text-primary mb-2 block text-sm font-medium transition-colors"
                 >
                   Your Name
                 </label>
@@ -146,14 +146,14 @@ export const ContactSection = () => {
                   id="name"
                   placeholder="Your Name"
                   name="name"
-                  className="border-input bg-background focus:ring-primary w-full rounded-md px-4 py-3 focus:ring-2 focus:outline-hidden"
+                  className="border-input bg-background/50 hover:bg-background/80 focus:bg-background focus:ring-primary/50 w-full rounded-lg px-4 py-3 transition-all duration-200 ease-in-out focus:ring-2 focus:outline-none"
                 />
               </div>
 
-              <div>
+              <div className="group">
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-center text-sm font-medium"
+                  className="text-muted-foreground group-focus-within:text-primary mb-2 block text-sm font-medium transition-colors"
                 >
                   Your Email
                 </label>
@@ -162,14 +162,14 @@ export const ContactSection = () => {
                   id="email"
                   placeholder="john@gmail.com"
                   name="email"
-                  className="border-input bg-background focus:ring-primary w-full rounded-md px-4 py-3 focus:ring-2 focus:outline-hidden"
+                  className="border-input bg-background/50 hover:bg-background/80 focus:bg-background focus:ring-primary/50 w-full rounded-lg px-4 py-3 transition-all duration-200 ease-in-out focus:ring-2 focus:outline-none"
                 />
               </div>
 
-              <div>
+              <div className="group">
                 <label
                   htmlFor="message"
-                  className="mb-2 block text-center text-sm font-medium"
+                  className="text-muted-foreground group-focus-within:text-primary mb-2 block text-sm font-medium transition-colors"
                 >
                   Your Message
                 </label>
@@ -178,25 +178,28 @@ export const ContactSection = () => {
                   placeholder="Hello, I'd like to talk about..."
                   name="message"
                   rows={4}
-                  className="border-input bg-background focus:ring-primary h-20 w-full rounded-md px-4 py-3 focus:ring-2 focus:outline-hidden"
+                  className="border-input bg-background/50 hover:bg-background/80 focus:bg-background focus:ring-primary/50 w-full resize-none rounded-lg px-4 py-3 transition-all duration-200 ease-in-out focus:ring-2 focus:outline-none"
                 />
               </div>
 
               <button
                 type="submit"
                 className={cn(
-                  "cosmic-button flex w-full items-center justify-center gap-2",
+                  "cosmic-button group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg px-6 py-3 transition-all duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98]",
+                  isLoading && "cursor-not-allowed opacity-80",
                 )}
                 disabled={isLoading}
               >
-                {isLoading ? (
-                  <Loader2Icon className="h-6 w-6 animate-spin" />
-                ) : (
-                  <>
-                    Send Message
-                    <SendIcon className="h-4 w-4" />
-                  </>
-                )}
+                <span className="relative z-10 flex items-center gap-2">
+                  {isLoading ? (
+                    <Loader2Icon className="h-5 w-5 animate-spin" />
+                  ) : (
+                    <>
+                      Send Message
+                      <SendIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </>
+                  )}
+                </span>
               </button>
             </form>
           </div>
